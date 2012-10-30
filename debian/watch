@@ -1,0 +1,2 @@
+version=3
+https://github.com/abique/tmfs/downloads .*/tmfs-(.*).tar.xz

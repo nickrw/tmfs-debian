@@ -1,0 +1,18 @@
+Source: tmfs
+Section: otherosfs
+Priority: extra
+Maintainer: Nicholas Robinson-Wall <nick@robinson-wall.com>
+Build-Depends: debhelper (>= 8.0.0), cmake, pkg-config, libfuse-dev,
+ libboost-filesystem-dev, libboost-system-dev, docbook-xsl, docbook-xml,
+ xsltproc
+Standards-Version: 3.9.3
+Homepage: https://github.com/abique/tmfs
+#Vcs-Git: git://git.debian.org/collab-maint/tmfs.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/tmfs.git;a=summary
+
+Package: tmfs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, fuse
+Description: Time Machine File System
+ Time Machine File System is a read-only virtual filesystem
+ which helps you to read you Apple Time Machine Backup.

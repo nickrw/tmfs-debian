@@ -1,0 +1,78 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" (C) Copyright 2012 Nicholas Robinson-Wall <nick@robinson-wall.com>,
+.\"
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH TMFS SECTION "October 30, 2012"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+tmfs \- Time Machine File System
+.SH SYNOPSIS
+.B tmfs
+.I hfs-root-mount time-machine-mount
+.R [fuse options...]
+.SH DESCRIPTION
+.B tmfs
+creates a read-only virtual filesystem which helps you to read your Apple
+Time Machine backup by reconstructing the hard-linked directories from the HFS+ metadata directory.
+.PP
+You can browse the mounted
+.I time-machine-mount
+normally and recover data from any backup point.
+.PP
+.B tmfs
+must be run as the root user, but the mounted
+.I time-machine-mount
+can be accessed by any user, based upon the options passed to FUSE. See
+.BR OPTIONS " below."
+.SH OPTIONS
+.TP
+.B hfs-root-mount
+The path to the mount point of your HFS+ Time Machine volume.
+.br
+You must mount the Time Machine device prior to running
+.BR tmfs .
+See the
+.B EXAMPLES
+section below.
+.TP
+.B time-machine-mount
+The path where the Time Machine will be mounted.
+This should be an empty directory.
+.TP
+.B fuse options
+A comma separated list of options that will be passed to
+.BR fuse (8).
+See
+.BR fuse (8)
+for available options. To be able to access the volume under a normal user
+account you should set the
+.BR uid ", " gid " and " "allow_other " options.
+.SH EXAMPLES
+.nf
+mkdir /mnt/hfs /mnt/tm
+.br
+mount /dev/sdXX /mnt/hfs
+.br
+tmfs /mnt/hfs /mnt/tm -ouid=$(id -u $USER),gid=$(id -g $USER),allow_other
+.fi
+.SH AUTHORS
+Alexandre Bique <bique.alexandre@gmail.com>
+.PP
+This manual page was contributed for Debian by
+.br
+Nicholas Robinson-Wall <nick@robinson-wall.com>
+.SH SEE ALSO
+.BR fuse (8)
