@@ -15,4 +15,9 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, fuse
 Description: Time Machine File System
  Time Machine File System is a read-only virtual filesystem
- which helps you to read you Apple Time Machine Backup.
+ which helps you to read you Apple Time Machine Backup by
+ reconstructing the hard-linked directories from the HFS+
+ metadata directory.
+ .
+ You can browse the fuse-mounted tmfs Time Machine normally
+ and recover data from any backup point contained within.
