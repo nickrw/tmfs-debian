@@ -1,0 +1,24 @@
+Description: Correct the binary's usage message
+ Upstream ships the application with a usage message that is inconsistent
+ with the provided example usage documentation.
+ .
+ tmfs (3-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #689630)
+Author: Nicholas Robinson-Wall <nick@robinson-wall.com>
+Bug-Debian: http://bugs.debian.org/689630
+Bug: https://github.com/abique/tmfs/issues/10
+Forwarded: https://github.com/abique/tmfs/issues/10
+Last-Update: 2012-10-31
+
+--- tmfs-3.orig/src/main.cc
++++ tmfs-3/src/main.cc
+@@ -4,7 +4,7 @@ int main(int argc, char ** argv)
+ {
+   if (argc < 3)
+   {
+-    fprintf(stderr, "%s: <path> fuse-options...\n", argv[0]);
++    fprintf(stderr, "usage: %s <HFS+ mount> <Time Machine Mount> [fuse options]\n", argv[0]);
+     return 2;
+   }
+ 
