@@ -2,7 +2,7 @@ Source: tmfs
 Section: otherosfs
 Priority: extra
 Maintainer: Nicholas Robinson-Wall <nick@robinson-wall.com>
-Build-Depends: debhelper (>= 8.0.0), dpkg-dev (>= 1.16.1~), cmake, pkg-config, libfuse-dev,
+Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.16.1~), cmake, pkg-config, libfuse-dev,
  libboost-filesystem-dev, libboost-system-dev, docbook-xsl, docbook-xml,
  xsltproc
 Standards-Version: 3.9.3
