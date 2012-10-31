@@ -1,10 +1,6 @@
 Description: Correct the binary's usage message
  Upstream ships the application with a usage message that is inconsistent
  with the provided example usage documentation.
- .
- tmfs (3-1) unstable; urgency=low
- .
-   * Initial release (Closes: #689630)
 Author: Nicholas Robinson-Wall <nick@robinson-wall.com>
 Bug-Debian: http://bugs.debian.org/689630
 Bug: https://github.com/abique/tmfs/issues/10
