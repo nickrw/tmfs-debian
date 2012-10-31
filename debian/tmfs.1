@@ -1,6 +1,6 @@
 .\"                                      Hey, EMACS: -*- nroff -*-
 .\" (C) Copyright 2012 Nicholas Robinson-Wall <nick@robinson-wall.com>,
-.TH TMFS 1 "October 30, 2012"
+.TH TMFS 1 "October 31, 2012"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -17,25 +17,25 @@
 tmfs \- Time Machine File System
 .SH SYNOPSIS
 .B tmfs
-.I hfs-root-mount time-machine-mount
+.I hfs\-root\-mount time\-machine\-mount
 [fuse options...]
 .SH DESCRIPTION
 .B tmfs
-creates a read-only virtual filesystem which helps you to read your Apple
-Time Machine backup by reconstructing the hard-linked directories from the HFS+ metadata directory.
+creates a read\-only virtual filesystem which helps you to read your Apple
+Time Machine backup by reconstructing the hard\-linked directories from the HFS+ metadata directory.
 .PP
 You can browse the mounted
-.I time-machine-mount
+.I time\-machine\-mount
 normally and recover data from any backup point.
 .PP
 .B tmfs
 must be run as the root user, but the mounted
-.I time-machine-mount
+.I time\-machine\-mount
 can be accessed by any user, based upon the options passed to FUSE. See
 .BR OPTIONS " below."
 .SH OPTIONS
 .TP
-.B hfs-root-mount
+.B hfs\-root\-mount
 The path to the mount point of your HFS+ Time Machine volume.
 .br
 You must mount the Time Machine device prior to running
@@ -44,7 +44,7 @@ See the
 .B EXAMPLES
 section below.
 .TP
-.B time-machine-mount
+.B time\-machine\-mount
 The path where the Time Machine will be mounted.
 This should be an empty directory.
 .TP
@@ -62,13 +62,13 @@ mkdir /mnt/hfs /mnt/tm
 .br
 mount /dev/sdXX /mnt/hfs
 .br
-tmfs /mnt/hfs /mnt/tm -ouid=$(id -u $USER),gid=$(id -g $USER),allow_other
+tmfs /mnt/hfs /mnt/tm \-ouid=$(id \-u $USER),gid=$(id \-g $USER),allow_other
 .fi
 .SH AUTHORS
 Alexandre Bique <bique.alexandre@gmail.com>
 .PP
 This manual page was contributed for Debian by
 .br
-Nicholas Robinson-Wall <nick@robinson-wall.com>
+Nicholas Robinson\-Wall <nick@robinson\-wall.com>
 .SH SEE ALSO
 .BR fuse (8)
