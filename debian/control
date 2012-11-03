@@ -12,7 +12,8 @@ Vcs-Browser: http://git.debian.org/?p=collab-maint/tmfs.git;a=summary
 
 Package: tmfs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, fuse
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: fuse
 Description: Apple Time Machine FUSE mount
  Time Machine File System is a read-only virtual filesystem
  which helps you to read your Apple Time Machine Backup by
