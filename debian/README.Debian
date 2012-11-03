@@ -1,0 +1,8 @@
+tmfs for Debian
+---------------
+
+This package includes 'fuse' as a Suggested package as the manpage refers the
+reader to fuse(8) for a full list of available mount options. fuse(8) is 
+provided by 'fuse', but this package is not required for tmfs to function.
+
+ -- Nicholas Robinson-Wall <nick@robinson-wall.com>  Sat, 03 Nov 2012 19:04:38 +0000
